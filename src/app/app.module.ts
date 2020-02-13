@@ -15,6 +15,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
+import { TemplateWithSidebarComponent } from './templates/template-with-sidebar/template-with-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { environment } from 'src/environments/environment';
     SignUpComponent,
     DashboardComponent,
     SidebarComponent,
-    ForgetComponent
+    ForgetComponent,
+    TemplateWithSidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,6 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
