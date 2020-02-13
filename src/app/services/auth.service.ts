@@ -26,4 +26,20 @@ user: Observable<firebase.User>;
 
   }
 
+  signin(email:string,password:string){
+    this.afAuth.auth.signInWithEmailAndPassword(email,password)
+    .then(value=>{
+      console.log('worked and welcome');
+      this.router.navigate(['/dashboard']);
+    })
+    .catch(err => {
+      console.log('',err.message);
+      
+      this.router.navigate(['/login']);
+      alert("Username or Password is Incorrect.")
+    })
+
+  }
+
+
 }
