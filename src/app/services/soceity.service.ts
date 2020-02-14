@@ -35,8 +35,10 @@ export class SocietyService {
                         console.log('data', document.data());
                         return {
                             id: document.id,
-                            address: document.get('Society Address'),
-                            name: document.get('Society Name')
+                            s_address: document.get('society_address'),
+                            s_name: document.get('society_name'),
+                            p_name: document.get('president_name'),
+                            m_number: document.get('mobile_number')                            
                         }
                     })
                 })

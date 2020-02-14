@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { TemplateWithSidebarComponent } from './templates/template-with-sidebar/template-with-sidebar.component';
+import { SocietyComponent } from './components/society/society.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TemplateWithSidebarComponent } from './templates/template-with-sidebar/
     DashboardComponent,
     SidebarComponent,
     ForgetComponent,
-    TemplateWithSidebarComponent
+    TemplateWithSidebarComponent,
+    SocietyComponent
   ],
   imports: [
     BrowserModule,
