@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class SocietyService {
 
+    formData:Society;
     constructor(private angularFirestore: AngularFirestore) { }
 
     getSocieties(): Observable<Society[]> {

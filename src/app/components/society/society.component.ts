@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SocietyService } from 'src/app/services/soceity.service';
 import { Society } from 'src/app/models';
+import { ToastrService } from 'ngx-toastr';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-society',
@@ -11,7 +13,9 @@ export class SocietyComponent implements OnInit {
 
   societies: Society[] = [];
 
-  constructor(private socieityService: SocietyService) { }
+  constructor(private socieityService: SocietyService,
+    private firestore: AngularFirestore,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
     this.socieityService.getSocieties()
@@ -29,4 +33,10 @@ export class SocietyComponent implements OnInit {
         }
       );
   }
+  onDelete(id:string){
+    if(confirm('You want to delete this Row!!')){
+      this.firestore.doc('Societies /'+id).delete();
+      this.toastr.warning('Delete Done !!');
+    }
+}
 }

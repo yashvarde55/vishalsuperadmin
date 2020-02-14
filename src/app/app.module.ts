@@ -17,7 +17,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { TemplateWithSidebarComponent } from './templates/template-with-sidebar/template-with-sidebar.component';
 import { SocietyComponent } from './components/society/society.component';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SocietyformComponent } from './components/societyform/societyform.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { SocietyComponent } from './components/society/society.component';
     SidebarComponent,
     ForgetComponent,
     TemplateWithSidebarComponent,
-    SocietyComponent
+    SocietyComponent,
+    SocietyformComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,8 @@ import { SocietyComponent } from './components/society/society.component';
     AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })

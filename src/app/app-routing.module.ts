@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgetComponent } from './components/forget/forget.component';
 import { TemplateWithSidebarComponent } from './templates/template-with-sidebar/template-with-sidebar.component';
 import { SocietyComponent } from './components/society/society.component';
+import { SocietyformComponent } from './components/societyform/societyform.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
     component: TemplateWithSidebarComponent,
     children: [
       {path:'dashboard',component:DashboardComponent},
-      {path:'society',component:SocietyComponent}     
+      {path:'society',component:SocietyComponent},
+      {path:'societyform',component:SocietyformComponent}     
     ]
   }
 
