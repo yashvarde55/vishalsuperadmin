@@ -12,6 +12,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class SocietyComponent implements OnInit {
 
   societies: Society[] = [];
+  service: any;
 
   constructor(private socieityService: SocietyService,
     private firestore: AngularFirestore,
@@ -39,4 +40,8 @@ export class SocietyComponent implements OnInit {
       this.toastr.warning('Delete Done !!');
     }
 }
+onEdit(soc:Society){
+  this.service.formData=Object.assign({},soc);
+}
+
 }

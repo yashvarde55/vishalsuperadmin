@@ -17,7 +17,7 @@
               <td>{{ society.p_name }}</td>
               <td>{{ society.m_number}}</td>
               <td><a class="btn text-danger" (click)="onDelete(society.id)"><i class="fa fa-trash"></i></a></td>
-              <td><a class="btn text-danger" (click)="onUpdate(emp.id)"><i class="fas fa-edit"></i></a></td>
+              <td><a class="btn text-danger" routerLink='/societyform' (click)="onEdit(society)"><i class="fas fa-edit"></i></a></td>
             
             </tr></tbody>
             <tfoot>
