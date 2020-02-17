@@ -7,6 +7,7 @@ import { ForgetComponent } from './components/forget/forget.component';
 import { TemplateWithSidebarComponent } from './templates/template-with-sidebar/template-with-sidebar.component';
 import { SocietyComponent } from './components/society/society.component';
 import { SocietyformComponent } from './components/societyform/societyform.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -21,11 +22,11 @@ const routes: Routes = [
   {path:'forget',component:ForgetComponent},
   {
     path: '',
-    component: TemplateWithSidebarComponent,
+    component: TemplateWithSidebarComponent, 
     children: [
       {path:'dashboard',component:DashboardComponent},
       {path:'society',component:SocietyComponent},
-      {path:'societyform',component:SocietyformComponent}     
+      {path:'societyform/:id',component:SocietyformComponent}  
     ]
   }
 

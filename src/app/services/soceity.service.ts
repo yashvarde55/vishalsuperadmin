@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class SocietyService {
 
-    formData:Society;
+    formData: Society;
     constructor(private angularFirestore: AngularFirestore) { }
 
     getSocieties(): Observable<Society[]> {
@@ -39,11 +39,29 @@ export class SocietyService {
                             s_address: document.get('society_address'),
                             s_name: document.get('society_name'),
                             p_name: document.get('president_name'),
-                            m_number: document.get('mobile_number')                            
+                            m_number: document.get('mobile_number')
                         }
                     })
                 })
             )
+    }
+
+    getSociety(id: string): Observable<Society>{
+        return this.angularFirestore
+        .collection('Societies ')
+        .doc(id)
+        .get()
+        .pipe(
+            map(document => {
+                return {
+                    id: document.id,
+                    s_address: document.get('society_address'),
+                    s_name: document.get('society_name'),
+                    p_name: document.get('president_name'),
+                    m_number: document.get('mobile_number')
+                }
+            })
+        )
     }
 
 }

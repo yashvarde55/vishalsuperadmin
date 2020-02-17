@@ -12,14 +12,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class SocietyComponent implements OnInit {
 
   societies: Society[] = [];
-  service: any;
-
-  constructor(private socieityService: SocietyService,
+  constructor(private service: SocietyService,
     private firestore: AngularFirestore,
     private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.socieityService.getSocieties()
+    this.service.getSocieties()
       .subscribe(
         data => {
           console.log(data);
@@ -34,14 +32,15 @@ export class SocietyComponent implements OnInit {
         }
       );
   }
-  onDelete(id:string){
-    if(confirm('You want to delete this Row!!')){
-      this.firestore.doc('Societies /'+id).delete();
+  onDelete(id: string) {
+    if (confirm('You want to delete this Row!!')) {
+      this.firestore.doc('Societies /' + id).delete();
       this.toastr.warning('Delete Done !!');
     }
-}
-onEdit(soc:Society){
-  this.service.formData=Object.assign({},soc);
-}
-
+  }
+  onEdit(society: Society) {
+    console.log('EDIT Function');
+    this.service.formData = Object.assign({}, society);
+    console.log('EDIT Function 2');
+  }
 }

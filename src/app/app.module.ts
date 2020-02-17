@@ -20,6 +20,8 @@ import { SocietyComponent } from './components/society/society.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SocietyformComponent } from './components/societyform/societyform.component';
+import { SocietyService } from './services/soceity.service';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,7 @@ import { SocietyformComponent } from './components/societyform/societyform.compo
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
+  providers:[AuthService,SocietyService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,24 +3,24 @@
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id" >
     <div class="form-group">
-        <input name="society_name" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control"  placeholder="Society Name" required>
-        <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">This field is required </div>
+        <input name="society_name" #society_name="ngModel" [(ngModel)]="service.formData.society_name" class="form-control"  placeholder="Society Name" required>
+        <div *ngIf="society_name.invalid && society_name.touched" class="validation-error">This field is required </div>
     </div> 
 
 
     <div class="form-group">
-            <input name="society_address" #position="ngModel" [(ngModel)]="service.formData.position" class="form-control"  placeholder="Society Address " >
+            <input name="society_address" #society_address="ngModel" [(ngModel)]="service.formData.society_address" class="form-control"  placeholder="Society Address " >
         </div> 
 
 <div class="form-row">
         <div class="form-group col-md-6">
-                <input name="president_name" #empCode="ngModel" [(ngModel)]="service.formData.empCode" class="form-control"  placeholder="President Name">
+                <input name="president_name" #president_name="ngModel" [(ngModel)]="service.formData.president_name" class="form-control"  placeholder="President Name">
    </div> 
 
 
 
     <div class="form-group col-md-6">
-        <input name="mobile_number" #mobile="ngModel" [(ngModel)]="service.formData.mobile" class="form-control"  placeholder="Mobile Number">
+        <input name="mobile_number" #mobile_number="ngModel" [(ngModel)]="service.formData.mobile_number" class="form-control"  placeholder="Mobile Number">
     </div> 
    
 </div>

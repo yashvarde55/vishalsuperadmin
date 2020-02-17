@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { SocietyService } from 'src/app/services/soceity.service';
 import { Society } from 'src/app/models/society.model';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-societyform',
   templateUrl: './societyform.component.html',
@@ -14,9 +15,10 @@ export class SocietyformComponent implements OnInit {
   constructor(
     private service: SocietyService,
     private firestore:AngularFirestore,
-    private toastr :ToastrService
+    private toastr :ToastrService,
+    private activatedRoute: ActivatedRoute
     ) { 
-
+      console.log();
   }
 
   ngOnInit() {
@@ -28,6 +30,14 @@ export class SocietyformComponent implements OnInit {
       })
       });*/
       this.resetForm();
+
+      const id = this.activatedRoute.snapshot.params.id;
+
+      this.service.getSociety(id)
+        .subscribe(
+          society => console.log(society)
+        )
+
   }
   resetForm(form?:NgForm){
     if(form!=null)
