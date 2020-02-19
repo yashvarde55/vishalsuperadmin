@@ -22,6 +22,29 @@ export class SocietyformComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    const id = this.activatedRoute.snapshot.params.id;
+      console.log(id)
+      if(id == 0 )
+      {
+        console.log('agar 0 he to jayega');
+        //this.resetForm();
+        this.service.formData = {
+          id:null,
+          s_address:"vishal",
+          s_name:"vishal",
+          p_name:"vishal",
+          m_number:"vishal"
+        }
+      
+      }
+      else
+      {
+        this.service.getSociety(id)
+        .subscribe(
+          society => console.log(society)
+        ) 
+      }
     /*this.service.getSocieties().subscribe(actionArray=>{
       this.list=actionArray.map(item=>{
         return {
@@ -29,15 +52,7 @@ export class SocietyformComponent implements OnInit {
           ...item.payload.doc.data()} as Society;
       })
       });*/
-      this.resetForm();
-
-      const id = this.activatedRoute.snapshot.params.id;
-
-      this.service.getSociety(id)
-        .subscribe(
-          society => console.log(society)
-        )
-
+      
   }
   resetForm(form?:NgForm){
     if(form!=null)

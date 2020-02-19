@@ -19,7 +19,7 @@ export class SignInComponent implements OnInit {
     signin(){
       const{email,password}=this.signinform.value;
       this.auth.signin(email,password);
-      alert("login successful")
+      
       this.signinform.reset();
       //this.router.navigate(['/dashboard']);
     };
