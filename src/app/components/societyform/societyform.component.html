@@ -3,7 +3,7 @@
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id" >
     <div class="form-group">
-        <input name="society_name" #society_name="ngModel" [(ngModel)]="service.formData.society_name" class="form-control"  placeholder="Society Name" required>
+        <input name="society_name" #society_name="ngModel"  [(ngModel)]="service.formData.society_name" class="form-control"  placeholder="Society Name" required>
         <div *ngIf="society_name.invalid && society_name.touched" class="validation-error">This field is required </div>
     </div> 
 

@@ -41,5 +41,8 @@ user: Observable<firebase.User>;
 
   }
 
+  logout(){
+    this.afAuth.auth.signOut();
+  }
 
 }

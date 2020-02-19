@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SocietyformComponent } from './components/societyform/societyform.component';
 import { SocietyService } from './services/soceity.service';
 import { AuthGuard } from './auth.guard';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,17 +40,18 @@ import { AuthGuard } from './auth.guard';
   imports: [
     BrowserModule,
     AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers:[AuthService,SocietyService,AuthGuard],
+  providers:[AuthService,SocietyService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

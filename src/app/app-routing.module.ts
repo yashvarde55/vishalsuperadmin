@@ -22,11 +22,13 @@ const routes: Routes = [
   {path:'forget',component:ForgetComponent},
   {
     path: '',
-    component: TemplateWithSidebarComponent, 
+    component: TemplateWithSidebarComponent,
+    canActivate:[AuthGuard],
     children: [
       {path:'dashboard',component:DashboardComponent},
       {path:'society',component:SocietyComponent},
-      {path:'societyform/:id',component:SocietyformComponent}  
+      {path:'societyform/:id',component:SocietyformComponent},
+      {path:'societyform',component:SocietyformComponent}    
     ]
   }
 

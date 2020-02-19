@@ -27,6 +27,11 @@ export class SignInComponent implements OnInit {
   
 
   ngOnInit() {
+    this.logout();  
+  }
+
+  private logout(){
+    this.auth.logout();
   }
 
 }
